@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>basic</title>
+  <meta content="yes" name="apple-mobile-web-app-capable" />
+  <meta content="yes" name="apple-touch-fullscreen" />
+  <meta content="telephone=no,email=no" name="format-detection" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+  <script src="../dist/FastClick.js"></script>
+  <style>
+    html,
+    body,
+    p,
+    div {
+      margin: 0;
+      padding: 0;
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1 id="elem">Click Me !!</h1>
+  <input type="text" />
+  <script type="text/javascript">
+    if ('addEventListener' in document) {
+      document.addEventListener('DOMContentLoaded', function () {
+        if (!(typeof FastClick === 'undefined')) {
+          FastClick.attach(document.body);
+        }
+      }, false);
+    }
+    document.getElementById('elem').addEventListener('click', function (e) {
+      console.log('click', e)
+    }, false)
+
+  </script>
+</body>
+
+</html>
